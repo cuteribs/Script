@@ -1,0 +1,22 @@
+{
+  "name": "script",
+  "version": "1.0.0",
+  "description": "* Store version QX1.0.0 (120) JS function is unlimited, but does not support v2, does not support AlwaysOn",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuteribs/Script.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cuteribs/Script/issues"
+  },
+  "homepage": "https://github.com/cuteribs/Script#readme",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
+}
