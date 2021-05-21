@@ -1,27 +1,27 @@
-name: "京东签到"
+name: '京东签到'
 
 on:
-    push:
-        branches:
-            - master
-    workflow_dispatch: # 手动触发
-    schedule:
-        - cron: '5 1 * * *'
+  push:
+    branches:
+      - master
+  workflow_dispatch: # 手动触发
+  schedule:
+    - cron: '5 1 * * *'
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout codes
-              uses: actions/checkout@v2
-              with:
-                  ref: 'master'
-            - name: Use Node.js
-              uses: actions/setup-node@v2
-              with:
-                node-version: '12.x'
-            - name: Run app
-              run: cd JD-DailyBonus && npm install && node JD_DailyBonus.js
-              env:
-                JD_COOKIE: ${{ secrets.JD_COOKIE }} 
-                SERVER_J: ${{ secrets.SERVER_J }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: 'master'
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '12.x'
+      - name: Run app
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          SERVER_J: ${{ secrets.SERVER_J }}
+        run: |
+          npm install
+          node app.js
