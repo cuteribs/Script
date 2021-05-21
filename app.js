@@ -30,7 +30,7 @@ function start() {
 		let t2 = content.match(/【签到总计】:((.|\n)*)【账号总计】/);
 		let res2 = t2 ? t2[1].replace(/\n/, '') : '总计0';
 
-		sendNotify('' + ` ${res2} ` + ` ${res} ` + new Date().toLocaleDateString(), content);
+		sendNotify('京东' + ` ${res2} ` + ` ${res} ` + new Date().toLocaleDateString(), content);
 		console.log('发送通知');
 	}
 }
